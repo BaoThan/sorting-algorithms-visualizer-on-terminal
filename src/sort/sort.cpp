@@ -8,7 +8,6 @@
 #define ARR_LEN arr.size()
 
 
-// BUBBLE SORT
 void bubble_sort(std::vector<uint16_t>& arr,
                  std::function<void(std::vector<uint16_t>,
                                     std::unordered_map<uint16_t, std::string>)> display,
@@ -41,7 +40,6 @@ void bubble_sort(std::vector<uint16_t>& arr,
 }
 
 
-// SELECTION SORT
 void selection_sort(std::vector<uint16_t>& arr,
                     std::function<void(std::vector<uint16_t>,
                                        std::unordered_map<uint16_t, std::string>)> display,
@@ -72,7 +70,6 @@ void selection_sort(std::vector<uint16_t>& arr,
 }
 
 
-// INSERTION SORT
 void insertion_sort(std::vector<uint16_t>& arr,
                     std::function<void(std::vector<uint16_t>,
                                        std::unordered_map<uint16_t, std::string>)> display,
