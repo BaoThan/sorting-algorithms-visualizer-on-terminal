@@ -41,6 +41,11 @@ void display_mock(std::vector<uint16_t> arr,
 }
 
 
+void display_finished_mock(std::vector<uint16_t> arr) {
+    static_cast<void>(arr);
+}
+
+
 UTEST(test_sort, test_bubble_sort) {
     // Generate a vector with random values
     std::vector<uint16_t> v = generate_vector_with_rand_nums();
@@ -49,7 +54,7 @@ UTEST(test_sort, test_bubble_sort) {
     std::vector<uint16_t> sorted_v = sort_vector(v);
 
     // Sort the random vector with the bubble sort function
-    bubble_sort(v, display_mock);
+    bubble_sort(v, display_mock, display_finished_mock);
     // Make sure the bubble sort function works and the vector is sorted
     for (uint16_t i = 0; i < VECTOR_SIZE; i++) {
         ASSERT_EQ(v[i], sorted_v[i]);
@@ -64,7 +69,7 @@ UTEST(test_sort, test_selection_sort) {
     std::vector<uint16_t> sorted_v = sort_vector(v);
 
     // Sort the random vector with the bubble sort function
-    selection_sort(v, display_mock);
+    selection_sort(v, display_mock, display_finished_mock);
     // Make sure the bubble sort function works and the vector is sorted
     for (uint16_t i = 0; i < VECTOR_SIZE; i++) {
         ASSERT_EQ(v[i], sorted_v[i]);
@@ -79,7 +84,7 @@ UTEST(test_sort, test_insertion_sort) {
     std::vector<uint16_t> sorted_v = sort_vector(v);
 
     // Sort the random vector with the bubble sort function
-    insertion_sort(v, display_mock);
+    insertion_sort(v, display_mock, display_finished_mock);
     // Make sure the bubble sort function works and the vector is sorted
     for (uint16_t i = 0; i < VECTOR_SIZE; i++) {
         ASSERT_EQ(v[i], sorted_v[i]);
@@ -94,7 +99,7 @@ UTEST(test_sort, test_merge_sort) {
     std::vector<uint16_t> sorted_v = sort_vector(v);
 
     // Sort the random vector with the bubble sort function
-    merge_sort(v, display_mock);
+    merge_sort(v, display_mock, display_finished_mock);
     // Make sure the bubble sort function works and the vector is sorted
     for (uint16_t i = 0; i < VECTOR_SIZE; i++) {
         ASSERT_EQ(v[i], sorted_v[i]);
@@ -109,7 +114,7 @@ UTEST(test_sort, test_quick_sort) {
     std::vector<uint16_t> sorted_v = sort_vector(v);
 
     // Sort the random vector with the bubble sort function
-    quick_sort(v);
+    quick_sort(v, display_mock, display_finished_mock);
     // Make sure the bubble sort function works and the vector is sorted
     for (uint16_t i = 0; i < VECTOR_SIZE; i++) {
         ASSERT_EQ(v[i], sorted_v[i]);
