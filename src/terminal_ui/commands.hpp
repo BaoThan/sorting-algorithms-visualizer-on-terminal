@@ -13,6 +13,8 @@ void visualize_merge_sort();
 
 void visualize_quick_sort();
 
+void visualize_heap_sort();
+
 void quit();
 
 #endif
